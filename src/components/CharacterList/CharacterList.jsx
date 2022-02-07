@@ -36,7 +36,7 @@ const CharacterList = () => {
       <ul style={{ background: theme.background, color: theme.foreground }}>
         {items.map(item => (
           <li key={item.id}>
-            <Link to={"./" + item.id}>
+            <Link to={"./" + item.id} style={{ color: theme.foreground }}>
               {item.id} - {item.name}
             </Link>
           </li>

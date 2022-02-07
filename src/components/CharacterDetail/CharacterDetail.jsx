@@ -6,7 +6,7 @@ import ThemeContext from '../../context/ThemeContext';
 
 const CharacterDetail = () => {
   const BASEURL = "https://rickandmortyapi.com/api";
-	const ITEMSURL = "/character/";
+  const ITEMSURL = "/character/";
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [character, setCharacter] = useState({});

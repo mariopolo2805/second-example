@@ -9,11 +9,12 @@ import ThemeContext from '../../context/ThemeContext';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 
-const Header = () => {
+const Header = ({ user, logoutUser}) => {
   const { theme } = useContext(ThemeContext);
 
   return (
     <header className="header" style={{ background: theme.background, color: theme.foreground }}>
+      <ThemeSwitcher />
       <Navbar bg={theme.name} expand="lg">
         <Link to="/">
           Home
@@ -21,8 +22,17 @@ const Header = () => {
         <Link to="/characters">
           Characters
         </Link>
-        <ThemeSwitcher />
+        <Link to="/profile">
+          Profile
+        </Link>
       </Navbar>
+      {user ?
+        <span>
+          Hello {user.name}! <button onClick={() => logoutUser()}>Logout</button>
+        </span> :
+        <Link to="/login">
+          Login
+        </Link>}
     </header>
   );
 }
